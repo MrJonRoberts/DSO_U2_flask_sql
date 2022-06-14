@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, session, redirect, url_for
 # for db
 import sqlite3
 
-DATABASE = r"C:\Users\jroberts\OneDrive - Trinity Anglican School\PyCharm\SCHOOL\DSO_U2_flask_sql\sports_orders.db"
+DATABASE = r"sports_orders.db"
 app = Flask(__name__)
 
 app.secret_key = "flaskLogin"
