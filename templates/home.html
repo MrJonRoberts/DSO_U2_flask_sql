@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<h1>HOME PAGE
+    <span class="right">
+          <a href="/">HOME</a> |
+        {%  if session['isLoggedIn'] %}
+                <a href="/logout">LOGOUT</a>
+
+        {% else %}
+                    <a href="/login">LOGIN</a>
+
+        {% endif %}
+    </span>
+
+</h1>
+<hr/>
+
+{%  if session['isLoggedIn'] %}
+    WELCOME {{ session['user'] }} {{ session['role'] }}
+{% else %}
+    PLEASE LOGIN
+{% endif %}
+
+</body>
+</html>

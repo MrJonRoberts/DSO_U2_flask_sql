@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<div class="maincontainer">
+<form action="/login" method="post">
+  <div class="imgcontainer">
+    <img src="{{ url_for("static", filename="images/login_img.png") }}" alt="Avatar" class="avatar">
+  </div>
+      <div class="msg">
+        {{ msg }}
+    </div>
+  <div class="container">
+    <label for="uname"><b>Username</b> {{ session['isLoggedIn'] }} {{ session['role'] }} {{ session['user'] }}</label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pwd" required>
+
+    <button type="submit">Login</button>
+  </div>
+
+  </form>
+</div>
+</body>
+</html>
